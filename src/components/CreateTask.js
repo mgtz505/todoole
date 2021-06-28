@@ -2,12 +2,14 @@ import React, { useState } from "react";
 
 const CreateTask = ({ addTask }) => {
   const [value, setValue] = useState("");
+  const [description, setDescription] = useState("")
 
   const handleSubmit = (event) => {
     event.preventDefault();
     if (!value) return;
 
     addTask(value);
+    
     setValue("");
   };
 
@@ -21,6 +23,9 @@ const CreateTask = ({ addTask }) => {
           value={value}
           onChange={event => setValue(event.target.value)}
         ></input>
+      
+
+
         <button type="submit" className="submit-button" onClick={handleSubmit}>
           Add to my Tasks
         </button>
