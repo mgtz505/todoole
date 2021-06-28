@@ -1,0 +1,79 @@
+
+
+.task-container {
+    display: grid;
+    grid-template-columns: 7fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    align-content: center;
+  
+
+}
+
+.task-title{
+    color:white;
+    overflow-wrap: break-word;
+    font-size: 32px;
+}
+
+.remove-button {
+    background-color: rgba(236,190,180);
+    display: inline-block;
+    padding: 0.3em 1.2em;
+    margin: 0.5em 2em 0.1em 2em;
+    border: 0.1em solid rgba(255,255,255, 0);
+    border-radius: 6px;
+    box-sizing: border-box;
+    text-decoration: none;
+    color:white;
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 0 0.05em 0.05em rgba(0,0,0,.35);
+}
+
+.remove-button:hover {
+    border-color: rgba(255,255,255,1);
+    
+}
+
+.task-status{
+    color:white;
+    font-size: 18px;
+    /* margin-left: 2rem; */
+    /* margin-right: 2rem; */
+    grid-column-start: 1;
+    max-width: 10rem;
+}
+
+.status-label {
+    color: white;
+    font-size: 16px;
+    position: absolute;
+    grid-row-start: 2;
+}
+
+.dropdown {
+    grid-column-start: 4;
+    grid-row-start: 1;
+    margin-left: 20rem;
+    height: 50px;
+    align-self: center;
+    font-size: 18px;
+    border-radius: 6px;
+    font-family: "Roboto", sans-serif;
+    border: 0.1em solid rgba(255,255,255, 0);
+    background-color: rgba(236,190,180);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 0 0.05em 0.05em rgba(0,0,0,.35);
+    margin-right: 2rem;
+
+}
+
+.dropdown:hover {
+    border-color: rgba(255,255,255,1);
+}
+

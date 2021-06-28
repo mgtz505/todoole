@@ -1,31 +1,32 @@
 import React, { useState, useEffect } from "react";
 import CreateTask from "./CreateTask";
+import "../styles/todo.css"
 
 const Todo = () => {
   function Task({ task, index, completeTask, removeTask }) {
     return (
       <div
-        className="task"
-        style={{ textDecoration: task.completed ? "line-through" : "" }}
+        className="task-container"
       >
-        {task.title}
-        {/* <button onClick={() => completeTask(index)}>Mark as Completed</button> */}
+        <h3
+        className="task-title"
+        style={{ textDecoration: task.completed ? "line-through" : "" }}
+            >{task.title}</h3>
+           
         <button
-          style={{ background: "red" }}
+        className="remove-button"
           onClick={() => {
             removeTask(index);
-          }}
-        >
-          X
-        </button>
-        <h3>{task.status}</h3>
+          }} >Remove</button>
 
-        <label for="status">Select a Status</label>
-        <select name="staus" onChange={(event) => selectChanged(event.target.value, index)}>
-          <option value="yetToBegin">Yet to Begin</option>
-          <option value="inProgress">In Progress</option>
-          <option value="pendingComments">Pending Comments</option>
-          <option value="completed">Completed</option>
+        <div className="task-status">{task.status ? (<h3 className="task-status">Task Status: {task.status}</h3>) : null}</div>
+        
+        {/* <label className="status-label" for="status">sdfsdf</label> */}
+        <select className="dropdown" name="staus" onChange={(event) => selectChanged(event.target.value, index)}>
+          <option className="option" value="Yet to Begin">Set Task Status</option>
+          <option className="option" value="Task In Progress">Task In Progress</option>
+          <option className="option" value="Pending Feedback">Pending Feedback</option>
+          <option className="option" value="Completed">Completed</option>
         </select>
       </div>
     );
@@ -74,14 +75,14 @@ useEffect(() => { setRemaining(tasks.filter(task => ! task.completed).length)})
 
   const selectChanged = (value,index) => {
     //   console.log(event.target.value)
-      if(value === "completed"){
+      if(value === "Completed"){
         const newTasks = [...tasks];
         newTasks[index].completed = true;
         
     
         setTasks(newTasks);
       } else {
-          if(value !== "completed"){
+          if(value !== "Completed"){
             const newTasks = [...tasks];
             newTasks[index].status = value
 

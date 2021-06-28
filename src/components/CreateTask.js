@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import "../styles/createtask.css"
+
 
 const CreateTask = ({ addTask }) => {
   const [value, setValue] = useState("");
