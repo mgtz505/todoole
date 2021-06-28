@@ -40,19 +40,11 @@
 
 .task-status{
     color:white;
-    font-size: 18px;
-    /* margin-left: 2rem; */
-    /* margin-right: 2rem; */
+    font-size: 24px;
     grid-column-start: 1;
     max-width: 10rem;
 }
 
-.status-label {
-    color: white;
-    font-size: 16px;
-    position: absolute;
-    grid-row-start: 2;
-}
 
 .dropdown {
     grid-column-start: 4;

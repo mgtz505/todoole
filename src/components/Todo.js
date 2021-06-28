@@ -13,6 +13,7 @@ const Todo = () => {
         style={{ textDecoration: task.completed ? "line-through" : "" }}
             >{task.title}</h3>
            
+           
         <button
         className="remove-button"
           onClick={() => {
@@ -21,7 +22,6 @@ const Todo = () => {
 
         <div className="task-status">{task.status ? (<h3 className="task-status">Task Status: {task.status}</h3>) : null}</div>
         
-        {/* <label className="status-label" for="status">sdfsdf</label> */}
         <select className="dropdown" name="staus" onChange={(event) => selectChanged(event.target.value, index)}>
           <option className="option" value="Yet to Begin">Set Task Status</option>
           <option className="option" value="Task In Progress">Task In Progress</option>
@@ -71,7 +71,6 @@ useEffect(() => { setRemaining(tasks.filter(task => ! task.completed).length)})
     setTasks(newTasks);
   };
 
-  const [status, setStatus] = useState(false)
 
   const selectChanged = (value,index) => {
     //   console.log(event.target.value)
