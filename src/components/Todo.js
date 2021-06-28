@@ -65,14 +65,14 @@ useEffect(() => { setRemaining(tasks.filter(task => ! task.completed).length)})
         <h3>My Tasks:</h3>
         <h5>Remaining Items: {remaining > 0 ? remaining : (<h5>All Tasks Completed!</h5>)}</h5>
       </div>
-      {tasks.map((task, index, description) => (
+      {tasks.map((task, index) => (
         <Task
           task={task}
           index={index}
           key={index}
           completeTask={completeTask}
           removeTask={removeTask}
-          descripton={description}
+          
         />
       ))}
     </div>
