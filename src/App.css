@@ -2,3 +2,8 @@ body {
   
   background: lavender;
 }
+
+
+.input-bar {
+  width: 200px;
+}
