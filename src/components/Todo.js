@@ -3,11 +3,18 @@ import CreateTask from './CreateTask';
 
 const Todo = () => {
 
-    function Task({ task }) {
+    function Task({ task, index, completeTask, removeTask }) {
         
         return (
-            <div>
+            <div 
+            className="task"
+            style={{ textDecoration: task.completed ? "line-through" : ""}}>
                 {task.title}
+            <button
+            onClick={() => completeTask(index)}>Mark as Completed</button>
+            <button 
+            style={{background: "red"}}
+            onClick={() => {removeTask(index)}}>X</button>
             </div>
         )
     }
@@ -22,9 +29,21 @@ const [tasks, setTasks] = useState([
         completed: false
     }
 ])
-
+        //Task Specific Functions:
     const addTask = title => {
         const newTasks = [...tasks, { title, completed: false }]
+        setTasks(newTasks)
+    }
+
+    const completeTask = index => {
+        const newTasks = [...tasks]
+        newTasks[index].completed = true
+        setTasks(newTasks)
+    }
+
+    const removeTask = index => {
+        const newTasks = [...tasks]
+        newTasks.splice(index,1)
         setTasks(newTasks)
     }
 
@@ -38,6 +57,8 @@ const [tasks, setTasks] = useState([
                 task={task}
                 index={index}
                 key={index}
+                completeTask={completeTask}
+                removeTask={removeTask}
                 />
             ))}
         </div>
