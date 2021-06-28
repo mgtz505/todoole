@@ -2,7 +2,6 @@ import React, { useState } from "react";
 
 const CreateTask = ({ addTask }) => {
   const [value, setValue] = useState("");
-  const [description, setDescription] = useState("")
 
   const handleSubmit = (event) => {
     event.preventDefault();

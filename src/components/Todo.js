@@ -9,8 +9,7 @@ const Todo = () => {
         style={{ textDecoration: task.completed ? "line-through" : "" }}
       >
         {task.title}
-        <h2>{task.description}</h2>
-        <button onClick={() => completeTask(index)}>Mark as Completed</button>
+        {/* <button onClick={() => completeTask(index)}>Mark as Completed</button> */}
         <button
           style={{ background: "red" }}
           onClick={() => {
@@ -19,6 +18,15 @@ const Todo = () => {
         >
           X
         </button>
+        <h3>{task.status}</h3>
+
+        <label for="status">Select a Status</label>
+        <select name="staus" onChange={(event) => selectChanged(event.target.value, index)}>
+          <option value="yetToBegin">Yet to Begin</option>
+          <option value="inProgress">In Progress</option>
+          <option value="pendingComments">Pending Comments</option>
+          <option value="completed">Completed</option>
+        </select>
       </div>
     );
   }
@@ -26,15 +34,19 @@ const Todo = () => {
   const [tasks, setTasks] = useState([
     {
       title: "Task 1A",
-      completed: true
+      completed: false,
+      status: ""
       
     },
     {
       title: "Task 2B",
-      completed: false
+      completed: false,
+      status: ""
       
     },
   ]);
+
+
 
 const [remaining, setRemaining] = useState(0)
 useEffect(() => { setRemaining(tasks.filter(task => ! task.completed).length)})
@@ -57,6 +69,28 @@ useEffect(() => { setRemaining(tasks.filter(task => ! task.completed).length)})
     newTasks.splice(index, 1);
     setTasks(newTasks);
   };
+
+  const [status, setStatus] = useState(false)
+
+  const selectChanged = (value,index) => {
+    //   console.log(event.target.value)
+      if(value === "completed"){
+        const newTasks = [...tasks];
+        newTasks[index].completed = true;
+        
+    
+        setTasks(newTasks);
+      } else {
+          if(value !== "completed"){
+            const newTasks = [...tasks];
+            newTasks[index].status = value
+
+            setTasks(newTasks)
+          }
+      }
+
+  }
+
 
   return (
     <div className="tasks">
