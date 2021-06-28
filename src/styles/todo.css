@@ -5,6 +5,7 @@
     grid-template-columns: 7fr 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;
     align-content: center;
+    margin-left: 1rem;
   
 
 }
@@ -77,3 +78,14 @@
     border-color: rgba(255,255,255,1);
 }
 
+.counter {
+    font-size: 18px;
+    color:white;
+    font-weight: bold;
+    margin-left: 1rem;
+}
+
+.completion-msg {
+    color: rgba(236,190,180);
+    font-weight: bold;
+}

@@ -17,7 +17,7 @@ const Todo = () => {
         className="remove-button"
           onClick={() => {
             removeTask(index);
-          }} >Remove</button>
+          }} >Remove Task</button>
 
         <div className="task-status">{task.status ? (<h3 className="task-status">Task Status: {task.status}</h3>) : null}</div>
         
@@ -97,8 +97,7 @@ useEffect(() => { setRemaining(tasks.filter(task => ! task.completed).length)})
     <div className="tasks">
       <div className="create-task">
         <CreateTask addTask={addTask} />
-        <h3>My Tasks:</h3>
-        <h5>Remaining Items: {remaining > 0 ? remaining : (<h5>All Tasks Completed!</h5>)}</h5>
+        <h5 className="counter">Tasks remaining on my to-do list: {remaining > 0 ? remaining + " items remaining" : (<h3 className="completion-msg">All Tasks Completed!</h3>)}</h5>
       </div>
       {tasks.map((task, index) => (
         <Task

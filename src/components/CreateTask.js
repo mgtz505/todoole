@@ -16,20 +16,19 @@ const CreateTask = ({ addTask }) => {
 
   return (
     <div className="form-container">
+        <h1 className="banner">Welcome to <span className="emphasis">To-Do</span>ole</h1>
       <form>
         <input
+          className="input-bar"
           type="text"
           placeholder="What needs to get done?"
-          className="input-bar"
           value={value}
           onChange={event => setValue(event.target.value)}
         ></input>
-      
-
-
         <button type="submit" className="submit-button" onClick={handleSubmit}>
           Add to my Tasks
         </button>
+      
       </form>
     </div>
   );

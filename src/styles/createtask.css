@@ -1,0 +1,32 @@
+.banner {
+    font-size: 4rem;
+    margin-left: 1rem;
+}
+
+.emphasis {
+    color: rgba(236,190,180,1)
+}
+
+.input-bar {
+    width: 30rem;
+    font-size: 18px;
+    border-radius: 6px;
+    border: 0.1em solid rgba(255,255,255, 0);
+    margin-left: 1rem;
+}
+
+
+.submit-button{
+    height: 1.7rem;
+    background-color: rgba(236,190,180);
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    text-align: center;
+    text-shadow: 0 0.05em 0.05em rgba(0,0,0,.35);
+    margin-left: 1rem;
+    margin-right: 2rem;
+    border-radius: 6px;
+    font-family: "Roboto", sans-serif;
+    border: 0.1em solid rgba(255,255,255, 0);
+}

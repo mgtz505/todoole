@@ -12,9 +12,7 @@ function App() {
 
   return (
     <div className="App">
-      <h2>Welcome to Todoole
       <Todo/>
-      </h2>
     </div>
   );
 }
